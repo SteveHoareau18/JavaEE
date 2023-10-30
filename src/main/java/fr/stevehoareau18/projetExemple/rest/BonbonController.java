@@ -11,13 +11,10 @@ import fr.stevehoareau18.projetExemple.model.Bonbon;
 public class BonbonController {
 	
 	@GET
-	@Path("/fraises")
+	@Path("/fraise")
 	public Bonbon getBonbon() {
 		Bonbon fraiseTagada = new Bonbon();
-		fraiseTagada.setNom("Fraise tagada");
-		fraiseTagada.setPrix(1.05f);
-		fraiseTagada.setCalorie(1000f);
-		fraiseTagada.setIndiceGlycerique(5f);
+		fraiseTagada.setNom("Fraise tagada").setPrix(1.05f).setCalorie(1000f).setIndiceGlycerique(5f);
 		
 		return fraiseTagada;
 	}

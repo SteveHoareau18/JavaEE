@@ -21,8 +21,7 @@ public class Bonbon implements Serializable{
 	private long id;
 	
 	private String nom;
-	private Float indiceGlycerique, prix, calorie;
-	
+	private Float indiceGlycerique, prix, calorie; 
 	
 	
 	public Bonbon() {
