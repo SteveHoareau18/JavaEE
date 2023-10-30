@@ -1,6 +1,7 @@
 package fr.stevehoareau18.projetExemple.rest;
 
-import javax.enterprise.context.RequestScoped;
+
+import javax.faces.bean.RequestScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 

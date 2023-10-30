@@ -1,13 +1,14 @@
 package fr.stevehoareau18.projetExemple.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Adresse implements Serializable{
@@ -19,11 +20,12 @@ public class Adresse implements Serializable{
 	private long id;
 	private String ville, nomRue;
 	private int numeroRue, codePostal;
-	private List<Consommateur> residants;
+	@OneToMany
+	private Set<Consommateur> residants;
 	
 	public Adresse() {
 		super();
-		this.setResidants(new ArrayList<Consommateur>());
+		this.setResidants(new HashSet<Consommateur>());
 	}
 	
 	@Override
@@ -72,11 +74,11 @@ public class Adresse implements Serializable{
 		return this;
 	}
 
-	public List<Consommateur> getResidants() {
+	public Set<Consommateur> getResidants() {
 		return residants;
 	}
 
-	public Adresse setResidants(List<Consommateur> residants) {
+	public Adresse setResidants(Set<Consommateur> residants) {
 		this.residants = residants;
 		return this;
 	}

@@ -1,14 +1,16 @@
 package fr.stevehoareau18.projetExemple.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Consommateur implements Serializable{
@@ -20,13 +22,15 @@ public class Consommateur implements Serializable{
 	private float id;
 	
 	private String nom, prenom;
-	private LocalDate dateNaissance;
+	private Date dateNaissance;
+	@ManyToOne
 	private Adresse adresse;
-	private List<Bonbon> bonbons;
+	@OneToMany
+	private Set<Bonbon> bonbons;
 	
 	public Consommateur() {
 		super();
-		this.setBonbons(new ArrayList<Bonbon>());
+		this.setBonbons(new HashSet<Bonbon>());
 	}
 
 	@Override
@@ -57,23 +61,23 @@ public class Consommateur implements Serializable{
 	}
 
 
-	public LocalDate getDateNaissance() {
+	public Date getDateNaissance() {
 		return dateNaissance;
 	}
 
 
-	public Consommateur setDateNaissance(LocalDate dateNaissance) {
+	public Consommateur setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 		return this;
 	}
 
 
-	public List<Bonbon> getBonbons() {
+	public Set<Bonbon> getBonbons() {
 		return bonbons;
 	}
 
 
-	public Consommateur setBonbons(List<Bonbon> bonbons) {
+	public Consommateur setBonbons(Set<Bonbon> bonbons) {
 		this.bonbons = bonbons;
 		return this;
 	}
