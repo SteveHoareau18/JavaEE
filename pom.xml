@@ -217,7 +217,12 @@
       <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
       <scope>provided</scope>
     </dependency>
-
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-web-api</artifactId>
+			<version>${jakartaee-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
     </dependencies>
 
