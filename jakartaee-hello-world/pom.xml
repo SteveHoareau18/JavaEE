@@ -65,6 +65,13 @@
     <artifactId>resteasy-jackson-provider</artifactId>
     <version>3.15.6.Final</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.wildfly.security/wildfly-elytron -->
+<dependency>
+    <groupId>org.wildfly.security</groupId>
+    <artifactId>wildfly-elytron</artifactId>
+    <version>2.2.2.Final</version>
+</dependency>
+
 	</dependencies>
 
 	<build>
